@@ -1,128 +1,82 @@
-# 🛠 Proyecto DevOps: App Fullstack con React + Flask + Docker
+# 🛠 DevOps Portfolio Project: Fullstack OApp with React + Flask + Docker
 
-Este proyecto es una aplicación web fullstack desarrollada como práctica para integrar herramientas modernas del ecosistema DevOps. Utiliza un frontend en **React**, un backend en **Flask** y ambos se ejecutan en contenedores Docker orquestados con **Docker Compose**.
+**🌐 Read this in Spanish → [README.es.md](README.es.md)**
 
-Sirve como base para comprender y aplicar principios clave como:
+This is a professional portfolio-ready DevOps project showcasing a containerized fullstack application using **React (frontend)**, **Flask (backend)**, and **Docker**.
 
-- Construcción y despliegue de imágenes Docker
-- Separación de entornos frontend/backend
-- Comunicación entre servicios a través de red interna Docker
-- Uso de variables de entorno para configuración flexible
-- Gestión de puertos y exposición de servicios
-- Resolución de CORS para permitir interacción entre FE y BE
-
-El objetivo final es crear un entorno replicable, profesional y listo para ser desplegado en cualquier plataforma compatible con contenedores.
+It was built to demonstrate:
+- Docker container orchestration with Docker Compose
+- API communication across services using internal networking
+- Use of environment variables
+- Multi-stage Docker builds (React + Nginx)
+- Dev vs Production mode configuration
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## 🧰 Technologies Used
 
-- **Frontend:** [React](https://reactjs.org/) (modo desarrollo)
-- **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
-- **Contenedores:** [Docker](https://www.docker.com/)
-- **Orquestación:** [Docker Compose](https://docs.docker.com/compose/)
-- **Servidor HTTP:** Nginx (modo producción opcional)
-- **Variables de entorno:** `.env` para React y Flask
-- **Red interna:** Docker Network
-
----
-
-## 📁 Estructura del proyecto
-
-proyecto-devops/
-├── backend/ # Aplicación Flask (API REST)
-│ ├── app.py
-│ ├── requirements.txt
-│ └── Dockerfile
-│
-├── frontend/ # Aplicación React
-│ ├── src/
-│ ├── public/
-│ ├── Dockerfile
-│ ├── package.json
-│ └── .env
-│
-├── nginx/ # (opcional, para servir en producción)
-│ └── default.conf
-│
-├── docker-compose.yml # Orquestación de servicios
-└── README.md # Documentación del proyecto
+- **Frontend:** React (served with Nginx)
+- **Backend:** Flask (Python)
+- **Containers:** Docker
+- **Orchestration:** Docker Compose
+- **Static server:** Nginx
+- **Env config:** `.env` files
 
 ---
 
-## 🚀 Cómo levantar el entorno local
+## 🚀 Local Setup
 
-### Requisitos
-
+### Prerequisites:
 - Docker
 - Docker Compose
 
-### Pasos:
-
-1. Clonar el repositorio:
+### Steps:
 
 ```bash
-git clone https://github.com/tu-usuario/proyecto-devops.git
-cd proyecto-devops
+git clone https://github.com/your-user/devops-fullstack-starter.git
+cd devops-fullstack-starter
 
-2. Configurar variables de entorno:
-
-Crear un archivo .env dentro de la carpeta frontend/ con el siguiente contenido:
+Create .env file inside the frontend/ folder:
 REACT_APP_API_URL=http://localhost:5000
-Este valor debe coincidir con la URL del backend Flask.
 
-3. Levantar los servicios:
-docker compose up --build
+Then, build and run the stack:
+sudo docker compose up --build
 
-Esto hará lo siguiente:
+App will be available at:
 
-Construirá las imágenes del frontend y backend.
+Frontend: http://localhost:3000
 
-Levantará los contenedores necesarios.
+Backend: http://localhost:5000/ping
 
-Expondrá los puertos: 3000 (frontend), 5000 (backend).
+📦 Project Structure
 
-🌐 Acceso
-Frontend (React): http://localhost:3000
+proyecto-devops/
+│
+├── backend/            # Flask app
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── frontend/           # React app
+│   ├── src/
+│   ├── public/
+│   └── Dockerfile
+│
+├── docker-compose.yml  # Service orchestration
+└── README.md
 
-Backend (ping): http://localhost:5000/ping
+✅ Connectivity Test
+Access http://localhost:3000 and verify:
 
+Test connection to backend: Pong!
 
-### PRUEBAS DE CONECTIVIDAD
-Una vez levantado el entorno, accedé al frontend en http://localhost:3000.
-Deberías ver el mensaje:
+This confirms React can communicate with Flask via HTTP.
 
-**Prueba de conexión al backend:**
-**Hola desde el backend Flask!**
+🧠 Notes
+To edit React: frontend/src/
 
-Esto indica que el frontend pudo conectarse correctamente al backend mediante fetch.
+To edit Flask: backend/
 
-También podés testear el backend directamente desde:
-http://localhost:5000/ping
+Rebuild images if you change Dockerfiles or dependencies
 
-### Desarrollo y Mantenimiento
-Para modificar el frontend, trabajá dentro de frontend/src/
-
-Para modificar el backend, trabajá dentro de backend/
-
-Si modificás dependencias o Dockerfiles, recordá reconstruir:
-
-docker compose up --build
-
-Para detener y eliminar los contenedores:
-
-docker compose down
-
-
-📌 Próximos pasos
-Integrar base de datos PostgreSQL como servicio adicional
-
-Conectar Flask con SQLAlchemy
-
-Agregar endpoints reales y persistencia
-
-Integrar pipeline de CI/CD con GitHub Actions o Jenkins
-
-Agregar monitoreo con Grafana + Prometheus (opcional)
-
-
+Use docker compose down to stop services
