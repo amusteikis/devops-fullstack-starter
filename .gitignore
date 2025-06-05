@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# React env
+frontend/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+
+# Docker
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+#Sistema
+.DS_Store

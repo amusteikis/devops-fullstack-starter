@@ -1,0 +1,17 @@
+#Imagen Base
+From python:3.10-slim
+
+#Crear el directorio de trabajo
+WORKDIR /app
+
+#Copiar los archivos del proyecto
+COPY . .
+
+#Instalar dependencias
+RUN pip install  --no-cache-dir -r requirements.txt
+
+#Exponer el puerto
+EXPOSE 5000
+
+#Comando para iniciar el servidor
+CMD ["python","app.py"]
