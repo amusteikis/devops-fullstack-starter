@@ -1,4 +1,4 @@
-import ApiTest from "./ApiTest";
+import UserForm from "./components/UserForm";
 
 import logo from './logo.svg';
 import './App.css';
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1>Mi Proyecto DevOps - Frontend</h1>
-      <ApiTest />
+      <UserForm />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
