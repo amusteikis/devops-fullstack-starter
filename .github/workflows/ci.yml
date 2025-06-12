@@ -43,10 +43,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🧪 Run backend linter (optional)
-        working-directory: ./backend
-        run: echo "TODO: Add linter or tests"
-
       - name: ⚛️ Set up Node.js
         uses: actions/setup-node@v3
         with:
