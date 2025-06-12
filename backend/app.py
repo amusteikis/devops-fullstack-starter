@@ -38,6 +38,30 @@ def create_user():
 
     return jsonify({"message": f"usuario '{user.name}' creado con ID {user.id}"}), 201
 
+@app.route("/users/<int:user_id>", methods=["PUT"])
+def update_user(user_id):
+    data = request.get_json()
+    name = data.get("name")
+
+    if not name:
+        return jsonify({"error": "El nombre es obligatorio"}), 400
+
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"error": "Usuario no encontrado"}), 404
+
+    user.name = name
+    db.session.commit()
+
+    return jsonify({"message": f"Usuario con ID {user_id} actualizado a '{name}'"})
+
+
+@app.route("/users/<int:user_id>", methods=["DELETE"])
+def delete_user(user_id):
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"error": "Usuario no encontrado"}), 200
+
 @app.route("/users", methods=["GET"])
 def list_users():
     users = User.query.all()
