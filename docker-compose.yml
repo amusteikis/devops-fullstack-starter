@@ -24,6 +24,8 @@ services:
       - db
     networks:
       - backend
+    volumes:
+      - ./backend:/app
 
   frontend:
     build:

@@ -60,7 +60,14 @@ def update_user(user_id):
 def delete_user(user_id):
     user = User.query.get(user_id)
     if not user:
-        return jsonify({"error": "Usuario no encontrado"}), 200
+        return jsonify({"error": "Usuario no encontrado"}), 404
+
+    db.session.delete(user)
+    db.session.commit()
+
+    return jsonify({"message": f"Usuario con ID {user_id} eliminado correctamente"})
+
+
 
 @app.route("/users", methods=["GET"])
 def list_users():

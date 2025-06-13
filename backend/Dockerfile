@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 5000
 
 #Comando para iniciar el servidor
-CMD ["python","app.py"]
+CMD ["python", "backend_app/__init__.py"]
