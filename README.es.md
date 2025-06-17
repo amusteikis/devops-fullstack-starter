@@ -1,130 +1,124 @@
+<<<<<<< HEAD
 ![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)
 # 🛠 Proyecto DevOps: App Fullstack con React + Flask + Docker
+=======
+[![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/amusteikis/devops-fullstack-starter/actions)
+>>>>>>> 60fe070 (Actualizacion de README antes de pull)
 
-Este proyecto es una aplicación web fullstack desarrollada como práctica para integrar herramientas modernas del ecosistema DevOps. Utiliza un frontend en **React**, un backend en **Flask** y ambos se ejecutan en contenedores Docker orquestados con **Docker Compose**.
+# 🛠 Proyecto DevOps de Portafolio: App Fullstack con React + Flask + Docker
 
-Sirve como base para comprender y aplicar principios clave como:
+**🌐 Leer esto en inglés → [README.md](README.md)**
 
-- Construcción y despliegue de imágenes Docker
-- Separación de entornos frontend/backend
-- Comunicación entre servicios a través de red interna Docker
-- Uso de variables de entorno para configuración flexible
-- Gestión de puertos y exposición de servicios
-- Resolución de CORS para permitir interacción entre FE y BE
-
-El objetivo final es crear un entorno replicable, profesional y listo para ser desplegado en cualquier plataforma compatible con contenedores.
+Este es un proyecto profesional listo para portafolio que demuestra una aplicación fullstack contenedorizada usando **React (frontend)**, **Flask (backend)** y **Docker**.
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## ✨ Funcionalidades Clave
 
-- **Frontend:** [React](https://reactjs.org/) (modo desarrollo)
-- **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
-- **Contenedores:** [Docker](https://www.docker.com/)
-- **Orquestación:** [Docker Compose](https://docs.docker.com/compose/)
-- **Servidor HTTP:** Nginx (modo producción opcional)
-- **Variables de entorno:** `.env` para React y Flask
-- **Red interna:** Docker Network
+- 🔄 Orquestación con Docker Compose para frontend y backend
+- 🌐 Comunicación entre servicios usando red interna
+- 🔐 Configuración basada en entornos con `.env`
+- 🏗 Builds multi-etapa (React → Nginx)
+- 🚀 Configuración para desarrollo y producción
 
 ---
 
-## 📁 Estructura del proyecto
+## 🧰 Stack Tecnológico
 
-proyecto-devops/
-├── backend/ # Aplicación Flask (API REST)
-│ ├── app.py
-│ ├── requirements.txt
-│ └── Dockerfile
-│
-├── frontend/ # Aplicación React
-│ ├── src/
-│ ├── public/
-│ ├── Dockerfile
-│ ├── package.json
-│ └── .env
-│
-├── nginx/ # (opcional, para servir en producción)
-│ └── default.conf
-│
-├── docker-compose.yml # Orquestación de servicios
-└── README.md # Documentación del proyecto
+| Capa        | Herramienta/Servicio   |
+|-------------|------------------------|
+| Frontend    | React + Nginx          |
+| Backend     | Flask (Python)         |
+| Contenedores| Docker                 |
+| Orquestación| Docker Compose         |
+| Configuración | Archivos `.env`      |
 
 ---
 
-## 🚀 Cómo levantar el entorno local
+## 🚀 Configuración Local
 
-### Requisitos
-
+### Requisitos Previos:
 - Docker
 - Docker Compose
 
-### Pasos:
-
-1. Clonar el repositorio:
+### Clonar y Ejecutar:
 
 ```bash
-git clone https://github.com/tu-usuario/proyecto-devops.git
-cd proyecto-devops
+git clone https://github.com/amusteikis/devops-fullstack-starter.git
+cd devops-fullstack-starter
+```
 
-2. Configurar variables de entorno:
+### Agregar archivo de entorno:
 
-Crear un archivo .env dentro de la carpeta frontend/ con el siguiente contenido:
+Crear un archivo `.env` dentro de la carpeta `frontend/`:
+```
 REACT_APP_API_URL=http://localhost:5000
-Este valor debe coincidir con la URL del backend Flask.
+```
 
-3. Levantar los servicios:
+### Construir y lanzar la app:
+
+```bash
 docker compose up --build
+```
 
-Esto hará lo siguiente:
+### Acceso:
 
-Construirá las imágenes del frontend y backend.
+- Frontend → http://localhost:3000  
+- Backend (test ping) → http://localhost:5000/ping
 
-Levantará los contenedores necesarios.
+---
 
-Expondrá los puertos: 3000 (frontend), 5000 (backend).
+## 🧪 Ejecutar Tests
 
-🌐 Acceso
-Frontend (React): http://localhost:3000
+Para correr los tests del backend:
 
-Backend (ping): http://localhost:5000/ping
+```bash
+cd backend/
+pytest
+```
 
+Los tests se ejecutan automáticamente en cada push mediante el pipeline de CI de GitHub Actions.
 
-### PRUEBAS DE CONECTIVIDAD
-Una vez levantado el entorno, accedé al frontend en http://localhost:3000.
-Deberías ver el mensaje:
+---
 
-**Prueba de conexión al backend:**
-**Hola desde el backend Flask!**
+## 📦 Estructura del Proyecto
 
-Esto indica que el frontend pudo conectarse correctamente al backend mediante fetch.
+```
+proyecto-devops/
+├── backend/            # App Flask
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── frontend/           # App React
+│   ├── src/
+│   ├── public/
+│   └── Dockerfile
+│
+├── docker-compose.yml  # Orquestación de servicios
+└── README.md
+```
 
-También podés testear el backend directamente desde:
-http://localhost:5000/ping
+---
 
-### Desarrollo y Mantenimiento
-Para modificar el frontend, trabajá dentro de frontend/src/
+## ✅ Test de Conectividad
 
-Para modificar el backend, trabajá dentro de backend/
+Visitar http://localhost:3000 y confirmar:
 
-Si modificás dependencias o Dockerfiles, recordá reconstruir:
+- ✔ Estado del backend: debería mostrar “Pong!”
 
-docker compose up --build
+Esto confirma la comunicación entre React y Flask vía HTTP.
 
-Para detener y eliminar los contenedores:
-
-docker compose down
-
-
-📌 Próximos pasos
-Integrar base de datos PostgreSQL como servicio adicional
-
-Conectar Flask con SQLAlchemy
-
-Agregar endpoints reales y persistencia
-
-Integrar pipeline de CI/CD con GitHub Actions o Jenkins
-
-Agregar monitoreo con Grafana + Prometheus (opcional)
+---
 
 
- 
+## 📌 Estado del Proyecto
+
+**🟢 Listo para deployment**  
+CI/CD está configurado y verificado. Siguiente paso: publicar en una plataforma cloud (Render, Railway o Azure).
+
+---
+
+## 🙌 Autor
+
+Hecho por [amusteikis](https://github.com/amusteikis)

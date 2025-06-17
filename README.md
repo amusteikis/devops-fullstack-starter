@@ -6,23 +6,27 @@
 
 This is a professional portfolio-ready DevOps project showcasing a containerized fullstack application using **React (frontend)**, **Flask (backend)**, and **Docker**.
 
-It was built to demonstrate:
-- Docker container orchestration with Docker Compose
-- API communication across services using internal networking
-- Use of environment variables
-- Multi-stage Docker builds (React + Nginx)
-- Dev vs Production mode configuration
+---
+
+## ✨ Key Features
+
+- 🔄 Docker Compose orchestration for frontend & backend
+- 🌐 Internal network communication between services
+- 🔐 Environment-based configuration (`.env`)
+- 🏗 Multi-stage builds (React → Nginx)
+- 🚀 Dev vs Production setup
 
 ---
 
-## 🧰 Technologies Used
+## 🧰 Tech Stack
 
-- **Frontend:** React (served with Nginx)
-- **Backend:** Flask (Python)
-- **Containers:** Docker
-- **Orchestration:** Docker Compose
-- **Static server:** Nginx
-- **Env config:** `.env` files
+| Layer       | Tool/Service         |
+|-------------|----------------------|
+| Frontend    | React + Nginx        |
+| Backend     | Flask (Python)       |
+| Containers  | Docker               |
+| Orchestration | Docker Compose     |
+| Config      | `.env` files         |
 
 ---
 
@@ -32,28 +36,50 @@ It was built to demonstrate:
 - Docker
 - Docker Compose
 
-### Steps:
+### Clone & Run:
 
 ```bash
-git clone https://github.com/your-user/devops-fullstack-starter.git
+git clone https://github.com/amusteikis/devops-fullstack-starter.git
 cd devops-fullstack-starter
+```
 
-Create .env file inside the frontend/ folder:
+### Add environment config:
+
+Create `.env` inside the `frontend/` folder:
+```
 REACT_APP_API_URL=http://localhost:5000
+```
 
-Then, build and run the stack:
-sudo docker compose up --build
+### Build and launch:
 
-App will be available at:
+```bash
+docker compose up --build
+```
 
-Frontend: http://localhost:3000
+### Access:
 
-Backend: http://localhost:5000/ping
+- Frontend → http://localhost:3000  
+- Backend (ping test) → http://localhost:5000/ping
 
-📦 Project Structure
+---
 
+## 🧪 Running Tests
+
+To run backend tests:
+
+```bash
+cd backend/
+pytest
+```
+
+Tests are automatically executed on every push via GitHub Actions CI pipeline.
+
+---
+
+## 📦 Project Structure
+
+```
 proyecto-devops/
-│
 ├── backend/            # Flask app
 │   ├── app.py
 │   ├── requirements.txt
@@ -66,19 +92,28 @@ proyecto-devops/
 │
 ├── docker-compose.yml  # Service orchestration
 └── README.md
+```
 
-✅ Connectivity Test
-Access http://localhost:3000 and verify:
+---
 
-Test connection to backend: Pong!
+## ✅ Connectivity Test
 
-This confirms React can communicate with Flask via HTTP.
+Visit http://localhost:3000 and confirm:
 
-🧠 Notes
-To edit React: frontend/src/
+- ✔ Backend status: should show “Pong!”
 
-To edit Flask: backend/
+This confirms communication between React and Flask over HTTP.
 
-Rebuild images if you change Dockerfiles or dependencies
+---
 
-Use docker compose down to stop services
+
+## 📌 Project Status
+
+**🟢 Ready for deployment**  
+CI/CD is set up and verified. Next step: publish to a cloud platform (Render, Railway or Azure).
+
+---
+
+## 🙌 Author
+
+Built by [amusteikis](https://github.com/amusteikis)
