@@ -1,3 +1,4 @@
+![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)
 # 🛠 Proyecto DevOps: App Fullstack con React + Flask + Docker
 
 Este proyecto es una aplicación web fullstack desarrollada como práctica para integrar herramientas modernas del ecosistema DevOps. Utiliza un frontend en **React**, un backend en **Flask** y ambos se ejecutan en contenedores Docker orquestados con **Docker Compose**.
