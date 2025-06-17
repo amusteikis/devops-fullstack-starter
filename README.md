@@ -1,6 +1,6 @@
 ![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)
 
-# 🛠 DevOps Portfolio Project: Fullstack OApp with React + Flask + Docker
+# 🛠 DevOps Portfolio Project: Fullstack App with React + Flask + Docker
 
 **🌐 Read this in Spanish → [README.es.md](README.es.md)**
 
@@ -46,6 +46,7 @@ cd devops-fullstack-starter
 ### Add environment config:
 
 Create `.env` inside the `frontend/` folder:
+
 ```
 REACT_APP_API_URL=http://localhost:5000
 ```
@@ -100,17 +101,23 @@ proyecto-devops/
 
 Visit http://localhost:3000 and confirm:
 
-- ✔ Backend status: should show “Pong!”
+- ✔ Backend status: should show existing users and allow creation/modification.
 
 This confirms communication between React and Flask over HTTP.
 
 ---
 
+## 🌐 Live Demo
+
+Access the deployed app here:  
+👉 https://devops-fullstack-starter.onrender.com
+
+---
 
 ## 📌 Project Status
 
-**🟢 Ready for deployment**  
-CI/CD is set up and verified. Next step: publish to a cloud platform (Render, Railway or Azure).
+**🟢 Fully Deployed**  
+CI/CD is set up and verified. Live frontend & backend deployed on Render.
 
 ---
 

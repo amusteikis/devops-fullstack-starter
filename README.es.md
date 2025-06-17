@@ -1,74 +1,71 @@
-<<<<<<< HEAD
+
 ![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)
-# 🛠 Proyecto DevOps: App Fullstack con React + Flask + Docker
-=======
-[![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/amusteikis/devops-fullstack-starter/actions)
->>>>>>> 60fe070 (Actualizacion de README antes de pull)
 
-# 🛠 Proyecto DevOps de Portafolio: App Fullstack con React + Flask + Docker
+# 🛠 Proyecto de Portafolio DevOps: Aplicación Fullstack con React + Flask + Docker
 
-**🌐 Leer esto en inglés → [README.md](README.md)**
+**🌐 Leé esto en inglés → [README.md](README.md)**
 
-Este es un proyecto profesional listo para portafolio que demuestra una aplicación fullstack contenedorizada usando **React (frontend)**, **Flask (backend)** y **Docker**.
+Este es un proyecto profesional listo para portafolio que demuestra una aplicación fullstack contenerizada utilizando **React (frontend)**, **Flask (backend)** y **Docker**.
 
 ---
 
-## ✨ Funcionalidades Clave
+## ✨ Características principales
 
 - 🔄 Orquestación con Docker Compose para frontend y backend
-- 🌐 Comunicación entre servicios usando red interna
-- 🔐 Configuración basada en entornos con `.env`
-- 🏗 Builds multi-etapa (React → Nginx)
-- 🚀 Configuración para desarrollo y producción
+- 🌐 Comunicación interna entre servicios
+- 🔐 Configuración por entorno con archivos `.env`
+- 🏗 Builds multietapa (React → Nginx)
+- 🚀 Configuración diferenciada para desarrollo y producción
 
 ---
 
 ## 🧰 Stack Tecnológico
 
-| Capa        | Herramienta/Servicio   |
-|-------------|------------------------|
-| Frontend    | React + Nginx          |
-| Backend     | Flask (Python)         |
-| Contenedores| Docker                 |
-| Orquestación| Docker Compose         |
-| Configuración | Archivos `.env`      |
+| Capa         | Herramienta/Servicio     |
+|--------------|--------------------------|
+| Frontend     | React + Nginx            |
+| Backend      | Flask (Python)           |
+| Contenedores | Docker                   |
+| Orquestación | Docker Compose           |
+| Configuración| Archivos `.env`          |
 
 ---
 
-## 🚀 Configuración Local
+## 🚀 Cómo levantar el proyecto localmente
 
-### Requisitos Previos:
+### Requisitos:
 - Docker
 - Docker Compose
 
-### Clonar y Ejecutar:
+### Clonar y correr:
 
 ```bash
 git clone https://github.com/amusteikis/devops-fullstack-starter.git
 cd devops-fullstack-starter
 ```
 
-### Agregar archivo de entorno:
+### Agregar configuración de entorno:
 
 Crear un archivo `.env` dentro de la carpeta `frontend/`:
+
 ```
 REACT_APP_API_URL=http://localhost:5000
 ```
 
-### Construir y lanzar la app:
+### Build y levantar:
 
 ```bash
 docker compose up --build
 ```
 
-### Acceso:
+### Accesos:
 
 - Frontend → http://localhost:3000  
-- Backend (test ping) → http://localhost:5000/ping
+- Backend (test de conexión) → http://localhost:5000/ping
 
 ---
 
-## 🧪 Ejecutar Tests
+## 🧪 Ejecutar tests
 
 Para correr los tests del backend:
 
@@ -81,7 +78,7 @@ Los tests se ejecutan automáticamente en cada push mediante el pipeline de CI d
 
 ---
 
-## 📦 Estructura del Proyecto
+## 📦 Estructura del proyecto
 
 ```
 proyecto-devops/
@@ -101,24 +98,30 @@ proyecto-devops/
 
 ---
 
-## ✅ Test de Conectividad
+## ✅ Test de conectividad
 
-Visitar http://localhost:3000 y confirmar:
+Visitá http://localhost:3000 y confirmá:
 
-- ✔ Estado del backend: debería mostrar “Pong!”
+- ✔ Que se muestran los usuarios existentes y se puede crear/modificar.
 
-Esto confirma la comunicación entre React y Flask vía HTTP.
+Esto confirma la comunicación entre React y Flask a través de HTTP.
 
 ---
 
+## 🌐 Demo en línea
 
-## 📌 Estado del Proyecto
+Accedé a la app desplegada aquí:  
+👉 https://devops-fullstack-starter.onrender.com
 
-**🟢 Listo para deployment**  
-CI/CD está configurado y verificado. Siguiente paso: publicar en una plataforma cloud (Render, Railway o Azure).
+---
+
+## 📌 Estado del proyecto
+
+**🟢 Totalmente desplegado**  
+El pipeline CI/CD está configurado y verificado. Frontend y backend están en línea en Render.
 
 ---
 
 ## 🙌 Autor
 
-Hecho por [amusteikis](https://github.com/amusteikis)
+Desarrollado por [amusteikis](https://github.com/amusteikis)
