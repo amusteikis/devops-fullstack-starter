@@ -7,7 +7,7 @@ function ApiTest() {
     const apiUrl = process.env.REACT_APP_API_URL;
     console.log("API URL:", apiUrl);
 
-    fetch(`${apiUrl}/`)
+    fetch(`${apiUrl}/users`)
       .then(response => response.json())
       .then(data => setMessage(data.message))
       .catch(() => setMessage("Error al conectar con backend"));
