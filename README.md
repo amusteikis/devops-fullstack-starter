@@ -1,3 +1,5 @@
+![CI](https://github.com/amusteikis/devops-fullstack-starter/actions/workflows/ci.yml/badge.svg)
+
 # 🛠 DevOps Portfolio Project: Fullstack OApp with React + Flask + Docker
 
 **🌐 Read this in Spanish → [README.es.md](README.es.md)**
