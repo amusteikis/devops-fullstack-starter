@@ -5,7 +5,7 @@ services:
     plan: free
     repo: https://github.com/amusteikis/devops-fullstack-starter
     region: oregon
-    dockerCommand: docker compose up --build
+    dockerComposeFilePath: docker-compose.yml
     buildFilter:
       paths:
         - docker-compose.yml
