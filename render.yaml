@@ -9,5 +9,5 @@ services:
     buildFilter:
       paths:
         - docker-compose.yml
-        - frontend/
-        - backend/
+        - frontend
+        - backend
