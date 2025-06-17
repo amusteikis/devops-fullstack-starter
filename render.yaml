@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fullstack-app
+    env: docker
+    plan: free
+    repo: https://github.com/amusteikis/devops-fullstack-starter
+    region: oregon
+    dockerCommand: docker compose up --build
+    buildFilter:
+      paths:
+        - docker-compose.yml
+        - frontend/
+        - backend/
